@@ -1,5 +1,6 @@
 
 import { CadastroComponet } from "./controller/cadastro.js";
+import { ListaProdutosComponent } from "./controller/listaProdutos.js";
 
 const link = document.getElementById('link')
 
@@ -10,5 +11,7 @@ link.addEventListener('click', (event) => {
         case "Cadastro":
             CadastroComponet();
             break
+        case"Produtos":
+        ListaProdutosComponent();
     }
 })
