@@ -1,7 +1,3 @@
-export const view = {
-    getcadastroHtml,
-    getListaProdutosHtml
-}
 
 const getcadastroHtml = () => {
     const main = document.getElementById('root')
@@ -16,9 +12,9 @@ const getcadastroHtml = () => {
     <label>Quantidade</label>
     <input id="quantidade" type="number">
     <br><br>
-    <select id="tipo" type="text" placeholder="Digite o tipo do produto">
-        <option value="1">Perecível</option>
-        <option value="0">Objeto</option>
+    <select id="tipo" class="tipo"  placeholder="Digite o tipo do produto">
+        <option value="1" >Perecível</option>
+        <option value="2" >Objeto</option>
     </select>
     <br><br>
     <label>Código</label>
@@ -40,21 +36,23 @@ const getListaProdutosHtml = () => {
     const main = document.getElementById('root')
     const dadosHtml = `
         <section>
-            <h1>Lista de Clientes</h1>
+            <h1>Lista de Produtos</h1>
             <table id="tbody">
             <tr>
                 <th>Nome</th>
                 <th>Marca</th>
                 <th>Quantidade</th>
-                <th>Tipo</th>
+                <th class="tipo">Tipo</th>
                 <th>Código</th>
                 <th>Observações</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-                <th>Novo</th>
             </tr>
             </table>
         </section> `
 
         main.innerHTML = dadosHtml
+}
+
+export const view = {
+    getcadastroHtml,
+    getListaProdutosHtml
 }
