@@ -1,6 +1,7 @@
 import { service } from "../service/index.js"
 import { view } from "../view/index.js"
-
+import { cancelar } from "./atualizar.js"
+ 
 export const CadastroComponet = () => {
     view.getcadastroHtml();
     
@@ -17,5 +18,6 @@ export const CadastroComponet = () => {
             observation: document.getElementById('observacoes').value
         }
        service.postProdutos(cadastroProdutos)
+       cancelar()
     })
 }
