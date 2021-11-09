@@ -1,0 +1,16 @@
+nav {
+	display: flex;
+	justify-content: center;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+}
+
+.formulario, .listaProdutos{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+}
