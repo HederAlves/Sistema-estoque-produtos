@@ -1,3 +1,4 @@
+import { service } from "../service/index.js"
 import { view } from "../view/index.js"
 
 export const CadastroComponet = () => {
@@ -15,6 +16,6 @@ export const CadastroComponet = () => {
             code: document.getElementById('codigo').value,
             observation: document.getElementById('observacoes').value
         }
-       service.post(cadastroProdutos)
+       service.postProdutos(cadastroProdutos)
     })
 }
