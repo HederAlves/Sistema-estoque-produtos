@@ -1,0 +1,11 @@
+{
+  "name": "produtos-frontend",
+  "version": "1.0.0",
+  "description": "produtos",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --file . --host --port 5000 --startPath index.html" 
+  },
+  "author": "",
+  "license": "ISC"
+}
