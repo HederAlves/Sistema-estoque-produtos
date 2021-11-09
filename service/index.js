@@ -1,9 +1,9 @@
-
-
 //-----------EXPORT------------
 export const service = {
     postProdutos,
-    getProdutos
+    getProdutos,
+    putProdutos,
+    deletarProduto
 }
 
 const url = "http://localhost:8000/api"
@@ -31,6 +31,39 @@ const postProdutos = (objetoProdutos) => {
 const getProdutos = () => {
     return fetch(url + "/products")
     .then((response) => {
+        if(response.status != 200){
+            console.log(`Erro no servidor: ${response.status}`)
+        }else {
+            return response.json()
+        }
+    })
+}
+
+//---------------PUT---------------
+
+const putProdutos = (objetoProduto, id) => {
+    return fetch(`${url}/products/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(objetoProduto)
+    }).then((response) => {
+        if(response.status != 200){
+            console.log(`Erro no servidor: ${response.status}`)
+        }else {
+            return response.json()
+        }
+    })
+}
+
+
+//----------DELETE----------------
+
+const deletarProduto = (id) => {
+    return fetch(`${url}/products/${id}`, {
+        method: "DELETE",
+    }).then((response) => {
         if(response.status != 200){
             console.log(`Erro no servidor: ${response.status}`)
         }else {
