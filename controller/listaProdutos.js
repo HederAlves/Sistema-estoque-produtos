@@ -1,6 +1,7 @@
 
 import { service } from "../service/index.js"
 import { view } from "../view/index.js"
+import { AtualizaComponent } from "./atualizar.js"
 
 export const ListaProdutosComponent = () => {
     view.getListaProdutosHtml()
@@ -16,20 +17,16 @@ export const ListaProdutosComponent = () => {
     const table = document.getElementById('tbody')
     table.addEventListener('click', (event)=> {
         const button = event.path[0].innerText
+        const id = event.path[0].id
         
         if(button === 'Editar') {
-        
+            AtualizaComponent(id);
         }
         if(button === 'Excluir') {
-           
-        }
-        if(button === 'Novo') {
-            
+            deletar(id)
         }
     })
 }
-
-
 
 const criarNovaLinha = (produto, marca, quantidade, tipo, codigo, observacoes, id) => {
     const table = document.getElementById('tbody')
@@ -41,12 +38,18 @@ const criarNovaLinha = (produto, marca, quantidade, tipo, codigo, observacoes, i
         <td class="none">${tipo}</td>
         <td class="none">${codigo}</td>
         <td class="none">${observacoes}</td>
-            <div class="lista-btn">
-                <a id="${id}" class="btn-link editar" >Editar</a>
-                <a id="${id}" class="btn-link type" >Excluir</a>
+            <div class="listaBotoes">
+                <a id="${id}" class="botoesLista editar" >Editar</a>
+                <a id="${id}" class="botoesLista type" >Excluir</a>
             </div>        
         </td>
         `
     NovaLinha.innerHTML = dadosHtml
     return table.appendChild(NovaLinha)
+}
+
+const deletar = (id) => {
+    service.deletarProduto(id).then(() => {
+        ListaProdutosComponent();
+    })
 }
