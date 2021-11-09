@@ -1,0 +1,104 @@
+body {
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+nav {
+    margin-top: 80px;
+    font-size: 65px;
+    color: white;
+}
+
+.navegacao {
+    width: 450px;
+    margin: -9px;
+    padding: 20px;
+    text-align: center;
+    background: black;
+    box-sizing: border-box;
+}
+
+.navegacao:hover {
+    background: bisque;
+    color: black;
+}
+
+main {
+    margin-top: 9px;
+}
+
+.formulario {
+   width: 882px;
+   padding: 0px 20px 20px 20px;
+   box-sizing: border-box;
+   background: bisque; 
+}
+
+h1 {
+    padding: 20px 0px;
+    margin-bottom: 40px;
+    font-size: 25px;
+    width: 882px;
+    height: 25px;
+    background: coral;
+    font-weight: bold;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+input, select {
+    font-size: 16px;
+    width: 50%;
+    height: 25px;
+    text-align: center;
+}
+
+button {
+    margin-bottom: 25px;
+    width: 120px;
+    height: 40px;
+    padding: 2px;
+    background: black;
+    color: white;
+}
+
+button:hover {
+    background: coral;
+    color: black;
+}
+
+.listaProdutos {
+   width: 882px;
+   box-sizing: border-box;
+   background: bisque;
+}
+
+th {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 20px 25px 20px;
+    border: solid, 10px, black;
+    box-sizing: border-box;
+}
+
+td {
+    padding: 0px 20px 15px 20px;
+}
+
+.botoesLista {
+    padding: 5px 10px;
+    margin: 0px -3px;
+    font-weight: bold;
+    box-sizing: border-box;
+    background: black;
+    color: white;
+}
+
+.botoesLista:hover {
+    box-sizing: border-box;
+    background: coral;
+    color: black;
+}
